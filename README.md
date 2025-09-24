@@ -29,7 +29,20 @@ Desenvolvido como parte de um desafio técnico, contemplando:
 git clone https://github.com/caiopgaspar/custom-node-random.git
 ```
 ---
-### 3. Subir a infraestrutura via Docker Compose, executando localmente
+
+### 3. Instalar dependências do Node (caso queira alterar o node)
+Abra o terminal na pasta custom_nodes/Random e rode o comando:
+```
+npm install
+```
+O arquivo .js já está incluído no repositório, então não é necessário compilar o TypeScript para usar o node.
+Caso queira modificar algo  no node, é preciso recompilar rodando o seguinte comando:
+```
+tsc Random.node.ts --module commonjs --target es6
+```
+
+---
+### 4. Subir a infraestrutura via Docker Compose, executando localmente
 Abra o terminal na pasta raiz do projeto e rode o comando:
 ```
 docker-compose up -d
@@ -38,7 +51,7 @@ Isso vai subir o n8n e o PostgreSQL configurado para n8n localmente
 
 ---
 
-### 4. Acessar n8n e criar um workflow com o conector Random
+### 5. Acessar n8n e criar um workflow com o conector Random
 
 Abra no navegador: http://localhost:5678
 
@@ -49,7 +62,7 @@ Crie um workflow (botão Create Workflow) e adicione o node (botão "+") buscand
 O node possui ícone e nomes amigáveis, que deixam a interface intuitiva
 
 ---
-### 5. Executar e testar o node
+### 6. Executar e testar o node
 
 Coloque valores inteiros nos campos Min e Max
 
